@@ -1,0 +1,21 @@
+name: run tests in master branch
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  # schedule:
+  #   - cron: '0 13 * * *'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          build: npm i
+          start: npx cypress run
