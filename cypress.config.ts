@@ -2,6 +2,7 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   projectId: "2j9g7e",
+  video: false,
   e2e: {
     specPattern: 'cypress/tests/**/**.test.ts',
     env: {
